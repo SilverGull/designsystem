@@ -1,4 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ListDirective } from './list.directive';
+import { ListConfiguration } from './list-configuration';
+import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver, ComponentRef } from '@angular/core';
+import { ListItemComponent } from './list-item.component';
+
+/**
+ * TODO
+ * rowClick
+ * (checkbox)
+ */
+
 
 @Component({
   selector: 'kirby-list',
@@ -6,10 +16,23 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  @Input() items: [{title: string, amount: string}];
-  constructor() { }
+  @Input() item: ListConfiguration;
+
+  // The specific row???
+  @ViewChild(ListDirective) listHost: ListDirective;
+
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
+    this.loadList();
+  }
+
+  loadList() {
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.item.rowTemplate);
+    const viewContainerRef = this.listHost.viewContainerRef;
+    viewContainerRef.clear();
+    const componentRef: ComponentRef<{}> = viewContainerRef.createComponent(componentFactory);
+//    (<RowComponent>componentRef.instance).data = this.rows.data;
   }
 
 }
