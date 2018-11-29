@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RowExampleComponent } from './row-example.component';
 
 @Component({
   selector: 'kirby-list-example',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListExampleComponent implements OnInit {
 
+  items: RowExampleComponent[];
+
   constructor() { }
 
   ngOnInit() {
+    const one = new RowExampleComponent();
+    one.in = 'one';
+    const two = new RowExampleComponent();
+    two.in = 'two';
+    this.items = [
+      one, two
+    ];
   }
 
 }

@@ -2,6 +2,7 @@ import { ListDirective } from './list.directive';
 import { ListConfiguration } from './list-configuration';
 import { Component, OnInit, Input, ViewChild, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { ListItemComponent } from './list-item.component';
+import { ListItemConfiguration } from './list-item-configuration';
 
 /**
  * TODO
@@ -17,6 +18,7 @@ import { ListItemComponent } from './list-item.component';
 })
 export class ListComponent implements OnInit {
   @Input() item: ListConfiguration;
+  @Input() items: ListItemConfiguration[];
 
   // The specific row???
   @ViewChild(ListDirective) listHost: ListDirective;

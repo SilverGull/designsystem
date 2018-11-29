@@ -6,8 +6,7 @@ import { ListComponent } from './components/list/list.component';
 import { IconComponent } from './components/icon/icon.component';
 import { CardFooterComponent } from './components/card/card-footer/card-footer.component';
 import { GridComponent } from './components/grid/grid.component';
-import { GridCardDirective } from './components/grid/grid-card.directive';
-import { CardWrapperComponent } from './components/grid/card-wrapper/card-wrapper.component';
+import { ComponentLoaderDirective } from './components/shared/component-loader.directive';
 import { ListDirective } from './components/list/list.directive';
 
 export const declarations = [
@@ -18,8 +17,7 @@ export const declarations = [
   ListComponent,
   IconComponent,
   GridComponent,
-  GridCardDirective,
-  CardWrapperComponent,
+  ComponentLoaderDirective,
   ListDirective,
-  ListItemDirective
+  ListItemDirective,
 ];

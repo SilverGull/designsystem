@@ -1,12 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ListItemConfiguration } from '~/kirby/components/list/list-item-configuration';
 
 @Component({
   selector: 'kirby-row-example',
-  template: `<span>ROW</span>`
+  template: `<span>ROW {{ in }}</span>`
 })
-export class RowExampleComponent implements OnInit {
+export class RowExampleComponent extends ListItemConfiguration implements OnInit {
 
-  constructor() { }
+  @Input() in: string;
+
+  constructor() {
+    super();
+  }
 
   ngOnInit() {
   }
