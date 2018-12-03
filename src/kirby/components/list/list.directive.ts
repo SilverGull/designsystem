@@ -20,10 +20,10 @@ export class ListDirective implements OnInit {
   }
 
   loadList() {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.item.rowTemplate);
-    const viewContainerRef = this.listHost.viewContainerRef;
-    viewContainerRef.clear();
-    const componentRef: ComponentRef<{}> = viewContainerRef.createComponent(componentFactory);
+    // const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.item.rowTemplate);
+    // const viewContainerRef = this.listHost.viewContainerRef;
+    // viewContainerRef.clear();
+    // const componentRef: ComponentRef<{}> = viewContainerRef.createComponent(componentFactory);
 //    (<RowComponent>componentRef.instance).data = this.rows.data;
   }
 }

@@ -1,5 +1,6 @@
+import { List2ItemConfiguration } from './../../../kirby/components/list2/list2-item-configuration';
 import { Component, OnInit } from '@angular/core';
-import { RowExampleComponent } from './row-example.component';
+import { ListItemExampleComponent } from './list-item-example.component';
 
 @Component({
   selector: 'kirby-list-example',
@@ -8,15 +9,13 @@ import { RowExampleComponent } from './row-example.component';
 })
 export class ListExampleComponent implements OnInit {
 
-  items: RowExampleComponent[];
+  items: List2ItemConfiguration[];
 
   constructor() { }
 
   ngOnInit() {
-    const one = new RowExampleComponent();
-    one.in = 'one';
-    const two = new RowExampleComponent();
-    two.in = 'two';
+    const one = new List2ItemConfiguration(ListItemExampleComponent, {test: 'one'});
+    const two = new List2ItemConfiguration(ListItemExampleComponent, {test: 'two'});
     this.items = [
       one, two
     ];

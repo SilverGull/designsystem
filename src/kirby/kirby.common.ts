@@ -1,3 +1,5 @@
+import { List2ItemDirective } from './components/list2/list2-item.directive';
+import { List2Component } from './components/list2/list2.component';
 import { ListItemDirective } from './components/list/list-item.directive';
 import { CardComponent } from './components/card/card.component';
 import { CardHeaderComponent } from './components/card/card-header/card-header.component';
@@ -20,4 +22,6 @@ export const declarations = [
   ComponentLoaderDirective,
   ListDirective,
   ListItemDirective,
+  List2Component,
+  List2ItemDirective
 ];
