@@ -10,6 +10,7 @@ import { CardFooterComponent } from './components/card/card-footer/card-footer.c
 import { GridComponent } from './components/grid/grid.component';
 import { ComponentLoaderDirective } from './components/shared/component-loader.directive';
 import { ListDirective } from './components/list/list.directive';
+import { ImageComponent } from './components/image/image.component';
 
 export const declarations = [
   CardComponent,
@@ -23,5 +24,6 @@ export const declarations = [
   ListDirective,
   ListItemDirective,
   List2Component,
-  List2ItemDirective
+  List2ItemDirective,
+  ImageComponent
 ];
