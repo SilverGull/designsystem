@@ -1,0 +1,10 @@
+<RadListView [items]="data.list">
+    <lv:RadListView.listViewLayout>
+        <lv:ListViewLinearLayout scrollDirection="Vertical" />
+    </lv:RadListView.listViewLayout>
+    <RadListView.itemTemplate>
+        <GridLayout class="list-group-item" rows="auto" columns="auto, *">
+            <ng-content></ng-content>
+        </GridLayout>
+    </RadListView.itemTemplate>
+</RadListView>

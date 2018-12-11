@@ -1,0 +1,46 @@
+<kirby-list [data]="data">
+    <kirby-table-header></kirby-table-header>
+    <kirby-row [swipeConfig]="???" [detailLink]="???" [select]="true">
+        <kirby-cell [text]="item.name" [bold]="true"></kirby-cell>
+        <kirby-cell [text]="item.value" [subText]="item.total" [markPositive]="true"></kirby-cell>
+    </kirby-row>
+</kirby-list>
+
+
+<RadListView [items]="data.list">
+    <lv:RadListView.listViewLayout>
+        <lv:ListViewLinearLayout scrollDirection="Vertical" />
+    </lv:RadListView.listViewLayout>
+    <RadListView.itemTemplate>
+        <GridLayout class="list-group-item" rows="auto" columns="auto, *">
+            <StackLayout class="kirby-cell bold">
+                <Label text="{{ name }}" textWrap="true" class="kirby-cell-main" />
+            </StackLayout>
+            <StackLayout class="kirby-cell">
+                <Label text="{{ value }}" textWrap="true" class="kirby-cell-main" />
+                <Label text="{{ total }}" textWrap="true" class="kirby-cell-sub" />
+            </StackLayout>
+        </GridLayout>
+    </RadListView.itemTemplate>
+</RadListView>
+
+
+<div class="kirby-table">
+    <div class="kirby row" *ngFor="let item of data.list">
+        <span class="kirby-cell bold">
+            <div>{{ item.name }}</div>
+        </span>
+        <span class="kirby-cell">
+            <div>{{ item.value }}</div>
+            <div>{{ item.total }}</div>
+        </span>
+    </div>
+</div>
+
+
+
+
+
+
+
+<kirby-table [config]="config" [data]="data"></kirby-table>
